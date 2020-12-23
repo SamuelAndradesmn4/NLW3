@@ -1,0 +1,106 @@
+#page-landing{
+    min-height: 100vh;   
+    background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#container{
+    margin: auto;
+
+    width: min(90%, 112rem); /*Valor minimo entre 90% e 112rem/1120px*/
+}
+
+#logo {
+    animation-delay: 50ms;
+}
+
+.location, h1, .visit p{
+    height: 16vh;
+} 
+
+.location{
+    animation-delay: 100ms;
+    font-size: 2.4rem;
+}
+ 
+.visit a{
+    width:8rem;
+    height: 8rem;
+    background: #ffd666;
+    
+    border: none;
+    border-radius:3rem;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    
+   margin: auto;
+
+   transition: background 200ms;
+   animation-delay: 250ms;
+}
+
+/*animando o botao - hover siginifica que o mouse esta e cima dele kk*/
+.visit a:hover {
+    background: #96feff;
+}
+
+main h1{
+    font-size: clamp(4rem, 8vw, 8.4rem); /*formula "clamp" ajusta o tamanho de acordo com os valores estupilados (valorminimo,valordesejado,valor máx)*/
+    animation-delay: 150ms;
+}
+
+.visit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.visit p{
+    animation-delay: 200ms;
+    
+}
+
+/*DESKTOP VERSION*/
+
+/*"@media (){}" :funciona como uma função, precisa do meta=viewreport no html*/
+@media (min-width: 760px){
+    #container{
+        padding: 5rem 2rem; /*espaçamento interno*/
+        /* shorthand background: image repeat position /size */
+        background: url("../images/bg.svg") no-repeat 80% /clamp(30rem, 54vw, 56rem);
+    }
+
+    header {
+        display: flex; /*todos da tag header fica um ao ladodo outro*/
+        align-items: center;
+        justify-content: space-between; /*Adiciona um espaço entre eles*/ 
+    }
+    .location, h1, .visit p {
+        height: initial; /*initial volta ao valor inicial/ resetar*/
+        text-align: initial;
+    }
+    .location{
+        text-align: right;
+        font-size: 2.4rem;
+        line-height: 1.5;
+    }
+    main h1{
+        font-weight: bold;
+        line-height: 0.88;
+        margin: clamp(10%, 9vh, 12%), 0 4rem;
+        width: min(300px, 80%);
+       
+    } 
+    .visit p{
+        line-height: 1.2;
+        width: clamp(20rem, 20vw, 30rem);
+        font-size: 2.4rem;
+    }
+    .visit a{
+        margin: initial;
+    }
+}
